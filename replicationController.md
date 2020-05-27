@@ -15,3 +15,28 @@
 - using the replication controller is also **recommended** if you just want to make sure **1 pod** is alwalys running, even after reboots
   - you can the run a replication controller with just **1 replica** 
   - this makes sure that the pod is alwalys running
+## Example 
+hello_world.yml
+
+```
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: helloworld-controller
+spec:
+  replicas: 2
+  selector:
+    app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: k8s-demo
+        image: wardviaene/k8s-demo
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+
+```
