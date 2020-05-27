@@ -1,0 +1,11 @@
+# Readiness Probe
+--------
+- Besides livenessProbes, you can also use **readinessProbes** on a container within a pod
+- **livenessProbes**: indicates wheather a container is running 
+  - if the check fails, the container will be restarted
+- **readinessProbes**: indicates wheather the container is ** Ready to serve** requests
+   - if the check fails, the contaienr will not be restarted, but the **pod's IP address will be removed from the service**, so it i'll not serve any requests anymore
+- The readiness test will make sure that at startup, the pod will only receive traffic when the test succeeds
+- you can use these probes in conjuction, and you can configure different tests for them
+- if your container alwalys  exixts when somethings goes wrong,  you don't need a livenessProbe
+- In general, you configure both the livenessProbe and the readinessProbe
