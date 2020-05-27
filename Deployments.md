@@ -35,3 +35,25 @@
 
 `kubectl rollout undo deployment/helloworld-deployment  -- roll back to previous version`
 `kubectl rollout undo deployment/helloworld-deployment --to-revision=n  ---rollback to any version` 
+
+### Example
+deployments.yml
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: k8s-demo
+        image: wardviaene/k8s-demo
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+```
