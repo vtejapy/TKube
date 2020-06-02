@@ -21,6 +21,7 @@
 `kubectl get rs ---- get information about the replica set`
 
 `kubectl get pods --show labels --get pods,and also show labels attached to, those pods`
+
 `kubectl rollout status deployments/helloworld-deployment  ---get deployment status`
 
 
@@ -34,6 +35,7 @@
 `kubectl rollout history deployment/helloworld-deployment --get the history of the rollout`
 
 `kubectl rollout undo deployment/helloworld-deployment  -- roll back to previous version`
+
 `kubectl rollout undo deployment/helloworld-deployment --to-revision=n  ---rollback to any version` 
 
 ### Example
